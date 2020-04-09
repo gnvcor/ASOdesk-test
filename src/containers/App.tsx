@@ -1,11 +1,12 @@
 import React from 'react'
+import TableContainer from './table/TableContainer'
 
 function App() {
   return (
-    <div>
-      test
-    </div>
+    <>
+      <TableContainer />
+    </>
   );
 }
 
-export default App;
+export default App
