@@ -51,7 +51,9 @@ const TableContainer = (props: PropsFromRedux) => {
             Header: <div />,
             accessor: 'suggestionsCount',
             Cell: ({ value }: { value: number | {} }) => {
-                const text = `Show ${typeof value === 'number' ? `(${value})` : ''}`
+                if (typeof value === 'object') return  null
+
+                const text = `Show (${value})`
 
                 return <TableComponent.ButtonCellElement text={text} onClick={props.onTogglePopup} />
             }
