@@ -3,6 +3,10 @@ import { connect, ConnectedProps } from 'react-redux'
 import { onLoadData, onRemoveElement } from '../../actions/tableActions'
 import TableComponent from '../../core/components/table/TableComponent'
 import { RootState } from '../../reducers/reducers'
+import {
+    STATE_SECONDARY,
+    ICON_REMOVE,
+} from '../../core/constants/buttonConstants'
 
 const connector = connect(
     (state: RootState) => ({
@@ -27,6 +31,16 @@ const TableContainer = (props: PropsFromRedux) => {
         {
             Header: 'Keyword',
             accessor: 'keyword',
+        },
+        {
+            Header: <div />,
+            accessor: 'explore',
+            Cell: () => {
+                const text = 'Explore'
+                const url = '/explore'
+
+                return <TableComponent.ButtonCellElement text={text} url={url} />
+            }
         },
         {
             Header: 'Traffic Score',
@@ -56,7 +70,13 @@ const TableContainer = (props: PropsFromRedux) => {
             Cell: ({ value }: { value: number }) => {
                 const onRemoveElement = () => props.onRemoveElement(value)
 
-                return <TableComponent.RemoveCellElement onClick={onRemoveElement} />
+                return (
+                    <TableComponent.ButtonCellElement
+                        state={STATE_SECONDARY}
+                        iconName={ICON_REMOVE}
+                        onClick={onRemoveElement}
+                    />
+                )
             }
         },
     ]
