@@ -1,0 +1,6 @@
+@import "../../styles/styles.css";
+
+.container {
+    height: 80px;
+    background: var(--color-gray-dark);
+}

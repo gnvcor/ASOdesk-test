@@ -4,6 +4,7 @@ import TableContainer from './table/TableContainer'
 import AsyncPopupContainer from './popup/AsyncPopupContainer'
 import { RootState } from '../reducers/reducers'
 import LayoutComponent from '../core/components/layout/LayoutComponent'
+import HeaderComponent from '../core/components/header/HeaderComponent'
 
 const connector = connect(
     (state: RootState) => ({
@@ -17,10 +18,13 @@ const AsideLayout = () => <div>AsideLayout</div>
 
 const App = (props: PropsFromRedux) => {
   return (
-    <LayoutComponent Aside={<AsideLayout />}>
-      <TableContainer />
-      {props.isPopupOpen && <AsyncPopupContainer />}
-    </LayoutComponent>
+    <>
+        <HeaderComponent />
+        <LayoutComponent Aside={<AsideLayout />}>
+            <TableContainer />
+            {props.isPopupOpen && <AsyncPopupContainer />}
+        </LayoutComponent>
+    </>
   );
 }
 
