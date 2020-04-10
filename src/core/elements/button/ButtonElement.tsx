@@ -1,18 +1,14 @@
 import React from 'react'
 import cn from 'classnames'
 import styles from './buttonElement.module.css'
+import { STATE_PRIMARY } from '../../constants/buttonConstants'
 
-export const ICON_REMOVE = 'remove'
-
-export const STATE_PRIMARY = 'primary'
-export const STATE_SECONDARY = 'secondary'
-
-interface IButtonElement {
+export interface IButtonElement {
     text?: string
     url?: string
     onClick?(): void
-    state: 'primary' | 'secondary'
-    iconName: string
+    state?: 'primary' | 'secondary'
+    iconName?: string
 }
 
 const ButtonElement = ({
