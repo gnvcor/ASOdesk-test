@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import tableReducer from './tableReducer'
 
 const reducers = combineReducers({
-    tableReducer,
+    table: tableReducer,
 })
 
 export type RootState = ReturnType<typeof reducers>
