@@ -43,6 +43,15 @@ const TableContainer = (props: PropsFromRedux) => {
             }
         },
         {
+            Header: <div />,
+            accessor: 'suggestionsCount',
+            Cell: ({ value }: { value: number | {} }) => {
+                const text = `Show ${typeof value === 'number' ? `(${value})` : ''}`
+
+                return <TableComponent.ButtonCellElement text={text} />
+            }
+        },
+        {
             Header: 'Traffic Score',
             accessor: 'trafficScore',
         },
