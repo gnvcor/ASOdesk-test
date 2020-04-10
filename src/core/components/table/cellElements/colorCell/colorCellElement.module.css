@@ -1,0 +1,26 @@
+@import "../../../../styles/styles.css";
+
+.container {
+    width: 120px;
+    height: 40px;
+}
+
+.color-0 {
+    background: var(--color-green);
+}
+
+.color-1 {
+    background: var(--color-gray);
+}
+
+.color-2 {
+    background: var(--color-red);
+}
+
+.color-3 {
+    background: var(--color-yellow);
+}
+
+.color-4 {
+    background: var(--color-purple);
+}

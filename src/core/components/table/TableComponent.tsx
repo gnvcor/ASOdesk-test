@@ -1,12 +1,10 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { useTable, useRowSelect } from 'react-table'
+import ColorCellElement from './cellElements/colorCell/ColorCellElement'
 
 export interface ITableComponent {
-    columns: {
-        Header: string;
-        accessor: string;
-    }[]
-    data: { [key: string]: string; }[]
+    columns: { [key: string]: any; }[]
+    data: { [key: string]: any; }[]
 }
 
 const TableComponent = ({ columns, data }: ITableComponent) => {
@@ -22,11 +20,6 @@ const TableComponent = ({ columns, data }: ITableComponent) => {
             data,
         },
         useRowSelect,
-        hooks => {
-            hooks.visibleColumns.push(columns => [
-                ...columns,
-            ])
-        }
     )
 
     return (
@@ -41,7 +34,7 @@ const TableComponent = ({ columns, data }: ITableComponent) => {
                 ))}
             </thead>
             <tbody {...getTableBodyProps()}>
-                {rows.slice(0, 10).map((row, i) => {
+                {rows.map((row, i) => {
                     prepareRow(row)
                     return (
                         <tr {...row.getRowProps()}>
@@ -55,5 +48,7 @@ const TableComponent = ({ columns, data }: ITableComponent) => {
         </table>
     )
 }
+
+TableComponent.ColorCellElement = ColorCellElement
 
 export default TableComponent
