@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo } from 'react'
 import { connect, ConnectedProps } from 'react-redux'
 import { onLoadData, onRemoveElement } from '../../actions/tableActions'
+import { onTogglePopup } from '../../actions/popupActions'
 import TableComponent from '../../core/components/table/TableComponent'
 import { RootState } from '../../reducers/reducers'
 import {
@@ -12,7 +13,11 @@ const connector = connect(
     (state: RootState) => ({
         data: state.table.data,
     }),
-    { onLoadData, onRemoveElement },
+    {
+        onLoadData,
+        onRemoveElement,
+        onTogglePopup,
+    },
 )
 
 type PropsFromRedux = ConnectedProps<typeof connector>
@@ -48,7 +53,7 @@ const TableContainer = (props: PropsFromRedux) => {
             Cell: ({ value }: { value: number | {} }) => {
                 const text = `Show ${typeof value === 'number' ? `(${value})` : ''}`
 
-                return <TableComponent.ButtonCellElement text={text} />
+                return <TableComponent.ButtonCellElement text={text} onClick={props.onTogglePopup} />
             }
         },
         {
