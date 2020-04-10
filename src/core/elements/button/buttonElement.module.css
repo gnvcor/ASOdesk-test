@@ -1,0 +1,26 @@
+@import "../../styles/styles.css";
+
+.button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 5px 10px;
+}
+
+.button-primary {
+    background: var(--color-gray-dark);
+}
+
+.button.icon:before {
+    content: '';
+    display: block;
+    height: 16px;
+    width: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.button.icon.icon-remove:before {
+    background-image: url(./icons/remove.png);
+}
