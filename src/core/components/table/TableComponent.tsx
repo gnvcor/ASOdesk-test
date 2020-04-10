@@ -4,6 +4,7 @@ import ColorCellElement from './cellElements/colorCell/ColorCellElement'
 import ButtonCellElement from './cellElements/buttonCell/ButtonCellElement'
 import RankCellElement from './cellElements/rankCell/RankCellElement'
 import TablePaginationComponent from './TablePaginationComponent'
+import styles from './tableComponent.module.css'
 
 export interface ITableComponent {
     columns: { [key: string]: any; }[]
@@ -37,7 +38,7 @@ const TableComponent = ({ columns, data }: ITableComponent) => {
 
     return (
         <>
-            <table {...getTableProps()}>
+            <table className={styles.table} {...getTableProps()}>
                 <thead>
                     {headerGroups.map(headerGroup => (
                         <tr {...headerGroup.getHeaderGroupProps()}>

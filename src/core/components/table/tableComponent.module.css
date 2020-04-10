@@ -1,3 +1,31 @@
+@import "../../styles/styles.css";
+
+table {
+    border-spacing: 0;
+}
+
+table th {
+    background: var(--color-gray-dark);
+    font-weight: normal;
+}
+
+table th, table td {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+table td {
+    border-bottom: 1px solid var(--color-black);
+}
+
+table td:first-child {
+    border-left: 1px solid var(--color-black);
+}
+
+table td:last-child {
+    border-right: 1px solid var(--color-black);
+}
+
 .pagination {
     margin-top: 20px;
 }
