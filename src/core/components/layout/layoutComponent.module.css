@@ -1,0 +1,21 @@
+@import "../../styles/styles.css";
+
+.container {
+    display: flex;
+    font-family: var(--font);
+}
+
+.aside {
+    width: 300px;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--color-gray-light);
+}
+
+.content {
+    padding: 20px;
+}
+
+:root body {
+    margin: 0;
+}
