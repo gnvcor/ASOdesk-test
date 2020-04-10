@@ -1,5 +1,6 @@
 :root {
     --color-black: #000;
+    --color-white: #fff;
     --color-green: #58f470;
     --color-gray-dark: #c4c4c4;
     --color-gray-light: #e5e5e5;
@@ -9,6 +10,7 @@
 
     --font-size-200: 12px;
     --font-size-400: 14px;
+    --font-size-900: 19px;
 
     --font: sans-serif;
 }
