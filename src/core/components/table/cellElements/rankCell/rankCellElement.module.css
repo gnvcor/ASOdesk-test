@@ -1,0 +1,19 @@
+@import "../../../../styles/styles.css";
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.change {
+    margin-left: 2px;
+    font-size: var(--font-size-200);
+}
+
+.changePositive {
+    color: var(--color-green);
+}
+
+.changeNegative {
+    color: var(--color-red);
+}

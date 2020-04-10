@@ -13,6 +13,11 @@ const connector = connect(
 
 type PropsFromRedux = ConnectedProps<typeof connector>
 
+type RankCell = {
+    position: number | string
+    change: number | null
+}
+
 const TableContainer = (props: PropsFromRedux) => {
     useEffect(() => {
         props.onLoadData()
@@ -27,10 +32,13 @@ const TableContainer = (props: PropsFromRedux) => {
             Header: 'Traffic Score',
             accessor: 'trafficScore',
         },
-        // {
-        //     Header: 'Rank',
-        //     accessor: 'rank',
-        // },
+        {
+            Header: 'Rank',
+            accessor: 'rank',
+            Cell: ({ value }: { value: RankCell }) => {
+                return <TableComponent.RankCellElement {...value} />
+            }
+        },
         {
             Header: 'Total apps',
             accessor: 'totalApps',

@@ -2,6 +2,7 @@ import React from 'react'
 import { useTable, useRowSelect } from 'react-table'
 import ColorCellElement from './cellElements/colorCell/ColorCellElement'
 import RemoveCellElement from './cellElements/removeCell/RemoveCellElement'
+import RankCellElement from './cellElements/rankCell/RankCellElement'
 
 export interface ITableComponent {
     columns: { [key: string]: any; }[]
@@ -52,5 +53,6 @@ const TableComponent = ({ columns, data }: ITableComponent) => {
 
 TableComponent.ColorCellElement = ColorCellElement
 TableComponent.RemoveCellElement = RemoveCellElement
+TableComponent.RankCellElement = RankCellElement
 
 export default TableComponent
